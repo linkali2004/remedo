@@ -61,7 +61,7 @@ export default function Booking() {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12} sm={6} lg={5} sx={{display:"flex" , alignItems:"center" , justifyContent:"center"}}>
-                    <Link sx={{fontSize:"16px"}}>Change Time and Date</Link>
+                    <Link sx={{fontSize:"16px"}} onClick={()=>navigate("/")}>Change Time and Date</Link>
                 </Grid>
             </Grid>
         </Grid>

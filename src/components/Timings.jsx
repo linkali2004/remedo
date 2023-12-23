@@ -57,11 +57,9 @@ export default function Timings() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0} child ={<Slots></Slots>}></CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-      <Typography variant = "body1" sx={{fontWeight:550}}>Tomorrow</Typography>
+      <CustomTabPanel value={value} index={1} child ={<Slots></Slots>}>
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-      <Typography variant = "body1" sx={{fontWeight:550}}>Mon , 25 Dec</Typography>
+      <CustomTabPanel value={value} index={2} child ={<Slots></Slots>}>
       </CustomTabPanel>
     </Box>
   );
