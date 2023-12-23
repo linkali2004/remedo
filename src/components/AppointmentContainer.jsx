@@ -1,12 +1,29 @@
 import { Avatar, Box, Button, Grid, IconButton, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import HomeIcon from '@mui/icons-material/Home';
 import CallIcon from '@mui/icons-material/Call';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 
-
 export default function AppointmentContainer() {
-  return (
+    const [background  , setBackground] = useState({btn1:"#3eb03e" ,btn2:"white",btn3:"white"})
+
+   function backgroundChanger(value)
+   {
+          if(value === 2)
+          {
+             setBackground({btn1:"white",btn2:"#3eb03e",btn3:"white"})
+          }
+          if(value === 1)
+          {
+            setBackground({btn1:"#3eb03e" ,btn2:"white",btn3:"white"})
+          }
+          if(value === 3)
+          {
+            setBackground({btn1:"white" ,btn2:"white",btn3:"#3eb03e"})
+          }
+   }
+
+    return (
    <Box sx={{padding:"16px"}}>
     <Grid container rowSpacing={{xs:3}}>
         <Grid item xs={12} sm={12} md={6} lg={8}>
@@ -22,13 +39,13 @@ export default function AppointmentContainer() {
             </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={4} sx={{paddingLeft:{lg:"120px"} , display:"flex" , justifyContent:{xs:"center" , lg:"flex-end" , md:"flex-end"} , gap:{xs:3,lg:2}}}>
-             <IconButton sx={{border:"1px solid #948e8e" , width:"75px" , height:"75px" , borderRadius:"8px"  , backgroundColor:"#3eb03e"}}>
-             <HomeIcon sx={{width:"35px" , height:"35px" , color:"white"}}></HomeIcon>
+             <IconButton sx={{border:"1px solid #948e8e" , width:"75px" , height:"75px" , borderRadius:"8px"  , backgroundColor:background.btn1}} onClick={()=>backgroundChanger(1)}>
+             <HomeIcon sx={{width:"35px" , height:"35px"}}></HomeIcon>
              </IconButton>
-             <IconButton sx={{border:"1px solid #948e8e" , width:"75px" , height:"75px" , borderRadius:"8px" }}>
+             <IconButton sx={{border:"1px solid #948e8e" , width:"75px" , height:"75px" , borderRadius:"8px" ,backgroundColor:background.btn2}} onClick={()=>backgroundChanger(2)}>
              <CallIcon sx={{width:"35px" , height:"35px"}}></CallIcon>
              </IconButton>
-             <IconButton sx={{border:"1px solid #948e8e" , width:"75px" , height:"75px" , borderRadius:"8px"}}>
+             <IconButton sx={{border:"1px solid #948e8e" , width:"75px" , height:"75px" , borderRadius:"8px" ,backgroundColor:background.btn3}} onClick={()=>backgroundChanger(3)}>
              <VideoCallIcon sx={{width:"35px" , height:"35px"}}></VideoCallIcon>
              </IconButton>
             </Grid>
